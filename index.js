@@ -1,5 +1,5 @@
-const express = require("express");
 const dotenv = require("dotenv").config();
+const express = require("express")
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -8,7 +8,7 @@ const userRoutes = require("./routes/UserRoutes");
 const errorHandler = require("./middleware/errorMiddleware");
 const path = require("path");
 const productRoute = require("./routes/RoutesProduct")
-const contactRoute = require("./routes/contactRoutes");
+// const contactRoute = require("./routes/contactRoutes");
 const app = express();
 
 
@@ -27,7 +27,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoute);
-app.use("/api/contactus", contactRoute);
+// app.use("/api/contactus", contactRoute);
 
 app.get("/", (req, res) => {
   res.send("hello");
